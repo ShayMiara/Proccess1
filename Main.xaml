@@ -306,7 +306,7 @@
         </ui:GetQueueItems.From>
         <ui:GetQueueItems.Priority>
           <InArgument x:TypeArguments="s:Nullable(x:Int32)">
-            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="1" />
+            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
           </InArgument>
         </ui:GetQueueItems.Priority>
         <ui:GetQueueItems.Reference>
