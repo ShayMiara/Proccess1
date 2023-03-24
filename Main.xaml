@@ -289,23 +289,26 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetQueueItem ContinueOnError="{x:Null}" DisplayName="Get Transaction Item" FolderPath="[io_ProccessName]" sap:VirtualizedContainerService.HintSize="387.2,143.2" sap2010:WorkflowViewState.IdRef="GetQueueItem_6" QueueType="[io_QueueName]" TransactionItem="[Result]">
+      <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" FolderPath="[io_ProccessName]" sap:VirtualizedContainerService.HintSize="387.2,143.2" sap2010:WorkflowViewState.IdRef="GetQueueItem_6" QueueType="[io_QueueName]" TransactionItem="[Result]">
         <ui:GetQueueItem.Reference>
           <InArgument x:TypeArguments="x:String" />
         </ui:GetQueueItem.Reference>
-        <ui:GetQueueItem.TimeoutMS>
-          <InArgument x:TypeArguments="x:Int32" />
-        </ui:GetQueueItem.TimeoutMS>
       </ui:GetQueueItem>
-      <ui:GetQueueItems Priority="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="Root/Proccess1" sap:VirtualizedContainerService.HintSize="387.2,143.2" sap2010:WorkflowViewState.IdRef="GetQueueItems_3" QueueItemStates="InProgress" QueueName="Dispatch" Result="[Item]">
+      <ui:GetQueueItems DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="Root/Proccess1" sap:VirtualizedContainerService.HintSize="387.2,143.2" sap2010:WorkflowViewState.IdRef="GetQueueItems_3" QueueItemStates="InProgress" QueueName="Dispatch" Result="[Item]">
         <ui:GetQueueItems.Duration>
           <InArgument x:TypeArguments="s:Nullable(x:Int32)" />
         </ui:GetQueueItems.Duration>
         <ui:GetQueueItems.From>
           <InArgument x:TypeArguments="s:Nullable(s:DateTime)" />
         </ui:GetQueueItems.From>
+        <ui:GetQueueItems.Priority>
+          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="1" />
+          </InArgument>
+        </ui:GetQueueItems.Priority>
         <ui:GetQueueItems.Reference>
           <InArgument x:TypeArguments="x:String" />
         </ui:GetQueueItems.Reference>
